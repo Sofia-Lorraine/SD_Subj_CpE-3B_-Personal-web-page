@@ -1,0 +1,154 @@
+/* General Layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* THE VIDEO LAYER */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* This MUST be negative to stay behind */
+}
+h1 {
+    text-align: center;
+}
+/* THE TEXT LAYER */
+.content-overlay {
+    position: relative; /* relative or absolute is REQUIRED for z-index to work */
+    z-index: 1; /* This MUST be higher than the video's z-index */
+    background: rgba(0, 0, 0, 0.5); /* This tint helps the text stay visible */
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Navigation Links Styling (SD_HTMLLec1b) */
+nav a {
+    color: #ffb7c5; /* Soft pink */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Card Style for Sections */
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Translucent glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    backdrop-filter: blur(5px); /* Blurs the video slightly behind cards */
+}
+
+/* Table Styling (SD_HTMLLec1c) */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.info-table th {
+    color: #ffb7c5;
+    padding: 10px;
+    width: 30%;
+}
+
+.info-table td {
+    padding: 10px;
+}
+
+/* Gallery & Lists */
+.gallery img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+ul, ol {
+    display: inline-block;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.8rem;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgba(246, 159, 177, 0.8); /* Soft pink like SVT Rose Quartz */
+    color: #1f1c2c;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background-color: rgb(210, 110, 247);
+    transform: scale(1.1);
+}
+
+.gallery img {
+    width: 90%;
+    max-width: 400px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Gallery Arrangement */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Automatically fits columns */
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole gallery */
+}
+
+.gallery-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ffb7c5;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Keeps images from stretching */
+    border-radius: 10px;
+}
+
+.gallery-item p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffb7c5;
+    letter-spacing: 1px;
+}
